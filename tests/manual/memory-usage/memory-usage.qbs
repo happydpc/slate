@@ -21,7 +21,7 @@ Project {
         // Additional import path used to resolve QML modules in Qt Creator's code model
         property pathList qmlImportPaths: []
 
-        cpp.cxxLanguageVersion: "c++11"
+        cpp.cxxLanguageVersion: "c++17"
         // https://bugreports.qt.io/browse/QBS-1434
         cpp.minimumMacosVersion: "10.7"
 

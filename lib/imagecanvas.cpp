@@ -1062,9 +1062,9 @@ void ImageCanvas::componentComplete()
     requestContentPaint();
 }
 
-void ImageCanvas::geometryChanged(const QRectF &newGeometry, const QRectF &oldGeometry)
+void ImageCanvas::geometryChange(const QRectF &newGeometry, const QRectF &oldGeometry)
 {
-    QQuickItem::geometryChanged(newGeometry, oldGeometry);
+    QQuickItem::geometryChange(newGeometry, oldGeometry);
 
     centrePanes();
     updateVisibleSceneArea();
@@ -2865,7 +2865,7 @@ void ImageCanvas::wheelEvent(QWheelEvent *event)
         }
 
         if (!qFuzzyIsNull(newZoomLevel))
-            applyZoom(newZoomLevel, event->pos());
+            applyZoom(newZoomLevel, event->position().toPoint());
     } else {
         // Wheel events pan.
         if (pixelDelta.isNull())
