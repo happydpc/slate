@@ -22,6 +22,7 @@
 
 #include <QObject>
 #include <QPoint>
+#include <QQmlEngine>
 #include <QSize>
 
 #include "slate-global.h"
@@ -41,9 +42,10 @@ class SLATE_EXPORT AnimationPlayback : public QObject
     Q_PROPERTY(int currentFrameIndex READ currentFrameIndex NOTIFY currentFrameIndexChanged FINAL)
     Q_PROPERTY(qreal scale READ scale WRITE setScale NOTIFY scaleChanged FINAL)
     Q_PROPERTY(bool loop READ shouldLoop WRITE setLoop NOTIFY loopChanged)
-
     // Not serialised.
     Q_PROPERTY(bool playing READ isPlaying WRITE setPlaying NOTIFY playingChanged)
+    QML_ELEMENT
+    QML_UNCREATABLE("")
 
 public:
     explicit AnimationPlayback(QObject *parent = nullptr);

@@ -158,44 +158,6 @@ ProjectManager *Application::projectManager()
 
 void Application::registerQmlTypes()
 {
-    qmlRegisterType<AutoSwatchModel>("App", 1, 0, "AutoSwatchModel");
-    qmlRegisterType<FileValidator>("App", 1, 0, "FileValidator");
-    qmlRegisterType<ImageCanvas>();
-    qmlRegisterType<ImageCanvas>("App", 1, 0, "ImageCanvas");
-    qmlRegisterType<CanvasPaneItem>("App", 1, 0, "CanvasPaneItem");
-    qmlRegisterType<TileCanvasPaneItem>("App", 1, 0, "TileCanvasPaneItem");
-    qmlRegisterType<KeySequenceEditor>("App", 1, 0, "KeySequenceEditor");
-    qmlRegisterType<LayeredImageCanvas>("App", 1, 0, "LayeredImageCanvas");
-    qmlRegisterType<LayerModel>("App", 1, 0, "LayerModel");
-    qmlRegisterType<NewProjectValidator>("App", 1, 0, "NewProjectValidator");
-    qmlRegisterType<ProbabilitySwatch>();
-    qmlRegisterType<ProbabilitySwatchModel>("App", 1, 0, "ProbabilitySwatchModel");
-    qmlRegisterType<ProjectManager>("App", 1, 0, "ProjectManager");
-    qmlRegisterType<RectangularCursor>("App", 1, 0, "RectangularCursor");
-    qmlRegisterType<SaturationLightnessPicker>("App", 1, 0, "SaturationLightnessPickerTemplate");
-    qmlRegisterType<SerialisableState>();
-    qmlRegisterType<SpriteImage>("App", 1, 0, "SpriteImage");
-    qmlRegisterType<Splitter>();
-    qmlRegisterType<Swatch>();
-    qmlRegisterType<SwatchModel>("App", 1, 0, "SwatchModel");
-    qmlRegisterType<TexturedFillPreviewItem>("App", 1, 0, "TexturedFillPreviewItem");
-    qmlRegisterType<TileCanvas>();
-    qmlRegisterType<TileCanvas>("App", 1, 0, "TileCanvas");
-    qmlRegisterType<TileGrid>("App", 1, 0, "TileGrid");
-    qmlRegisterType<TilesetSwatchImage>("App", 1, 0, "TilesetSwatchImage");
-    qmlRegisterUncreatableType<AnimationPlayback>("App", 1, 0, "AnimationPlayback", QLatin1String("Cannot create objects of type AnimationPlayback"));
-    qmlRegisterUncreatableType<CanvasPane>("App", 1, 0, "CanvasPane", "Can't create instances of CanvasPane");
-    qmlRegisterUncreatableType<ClipboardImage>("App", 1, 0, "ClipboardImage",
-        QLatin1String("Cannot create objects of type ClipboardImage"));
-    qmlRegisterUncreatableType<Project>("App", 1, 0, "Project", QLatin1String("Cannot create objects of type Project"));
-    qmlRegisterUncreatableType<LayeredImageProject>("App", 1, 0, "LayeredImageProject",
-        QLatin1String("Cannot create objects of type LayeredImageProject"));
-    qmlRegisterUncreatableType<TexturedFillVarianceParameter>("App", 1, 0, "TexturedFillParameter",
-        QLatin1String("Cannot create objects of type TexturedFillParameter"));
-    qmlRegisterUncreatableType<TexturedFillParameters>("App", 1, 0, "TexturedFillParameters",
-        QLatin1String("Cannot create objects of type TexturedFillParameters"));
-    qmlRegisterSingletonType<BuildInfo>("App", 1, 0, "BuildInfo", buildInfoSingletonProvider);
-    qmlRegisterSingletonType<Clipboard>("App", 1, 0, "Clipboard", clipboardSingletonTypeProvider);
     qRegisterMetaType<ApplicationSettings*>();
     qRegisterMetaType<ImageLayer*>();
     qRegisterMetaType<Project::Type>();

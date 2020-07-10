@@ -38,6 +38,8 @@ class SLATE_EXPORT LayeredImageProject : public Project
     Q_PROPERTY(bool autoExportEnabled READ isAutoExportEnabled WRITE setAutoExportEnabled NOTIFY autoExportEnabledChanged)
     Q_PROPERTY(bool usingAnimation READ isUsingAnimation WRITE setUsingAnimation NOTIFY usingAnimationChanged)
     Q_PROPERTY(AnimationPlayback *animationPlayback READ animationPlayback CONSTANT FINAL)
+    QML_ELEMENT
+    QML_UNCREATABLE("")
 
 public:
     LayeredImageProject();
