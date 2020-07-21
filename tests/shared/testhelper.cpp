@@ -57,8 +57,8 @@ void TestHelper::initTestCase()
     // This should not be enabled for tests.
     QVERIFY(!app.settings()->loadLastOnStartup());
 
-    QVERIFY(window->property("overlay").isValid());
-    overlay = window->property("overlay").value<QQuickItem*>();
+    QQmlExpression overlayExpression(qmlContext(window), window, "Overlay.overlay");
+    overlay = overlayExpression.evaluate().value<QQuickItem*>();
     QVERIFY(overlay);
 
     projectManager = app.projectManager();
@@ -1922,14 +1922,12 @@ bool TestHelper::createNewLayeredImageProject(int imageWidth, int imageHeight, b
     return true;
 }
 
-bool TestHelper::ensureNewImageProjectPopupVisible(Project::Type /*projectType*/, QObject **popup)
+bool TestHelper::ensureNewImageProjectPopupVisible(Project::Type projectType, QObject **popup)
 {
-    const QString newProjectPopupTypeName = "NewImageProjectPopup";
-    // TODO: when we switch to Qt 5.14 (or higher), use the code below instead:
     // NewLayeredImageProjectPopup is basically just NewImageProjectPopup,
     // but their file names are different so we have to account for that here.
-//    const QString newProjectPopupTypeName = projectType == Project::ImageType
-//            ? "NewImageProjectPopup" : "NewLayeredImageProjectPopup";
+    const QString newProjectPopupTypeName = projectType == Project::ImageType
+            ? "NewImageProjectPopup" : "NewLayeredImageProjectPopup";
     TRY_VERIFY(findPopupFromTypeName(newProjectPopupTypeName));
     QObject *newImageProjectPopup = findPopupFromTypeName(newProjectPopupTypeName);
     VERIFY(newImageProjectPopup);
