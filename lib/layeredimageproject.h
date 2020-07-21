@@ -40,6 +40,7 @@ class SLATE_EXPORT LayeredImageProject : public Project
     Q_PROPERTY(AnimationPlayback *animationPlayback READ animationPlayback CONSTANT FINAL)
     QML_ELEMENT
     QML_UNCREATABLE("")
+    Q_MOC_INCLUDE("imagelayer.h")
 
 public:
     LayeredImageProject();
